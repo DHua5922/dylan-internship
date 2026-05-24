@@ -1,0 +1,8 @@
+.slick-arrow::before {
+    color: var(--secondary-color) !important;
+    font-size: 40px !important;
+}
+
+.carousel__item {
+    padding: 0 10px;
+}
