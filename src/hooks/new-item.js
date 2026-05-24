@@ -1,7 +1,7 @@
 import { getNewItemsApi } from "../api/new-item";
 import { useQuery } from "./query";
 
-const placeholderItems = Array.from({ length: 6 }).map((item, index) => ({
+const placeholderItems = Array.from({ length: 6 }).map((item) => ({
   id: 0,
   authorId: 0,
   authorImage: "",
