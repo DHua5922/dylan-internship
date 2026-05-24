@@ -6,9 +6,11 @@ import LandingIntro from "../components/home/LandingIntro";
 import NewItems from "../components/home/NewItems";
 import TopSellers from "../components/home/TopSellers";
 import { useHotCollections } from "../hooks/collection";
+import { useNewItems } from "../hooks/new-item";
 
 const Home = () => {
   const { hotCollections, isLoading } = useHotCollections(); 
+  const { newItems, isLoading: isNewItemsLoading } = useNewItems();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +23,7 @@ const Home = () => {
         <Landing />
         <LandingIntro />
         <HotCollections list={hotCollections} isLoading={isLoading} />
-        <NewItems />
+        <NewItems list={newItems} isLoading={isNewItemsLoading} />
         <TopSellers />
         <BrowseByCategory />
       </div>
