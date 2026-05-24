@@ -1,40 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import Timer from "../UI/Timer";
 import Skeleton from "../UI/Skeleton";
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024, // Screen width <= 1024px
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      },
-    },
-    {
-      breakpoint: 768, // Screen width <= 768px
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
-      },
-    },
-    {
-      breakpoint: 576, // Screen width <= 576px
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+import Carousel from "../UI/Carousel";
 
 const NewItems = ({ list, isLoading }) => {
   return (
@@ -48,7 +16,7 @@ const NewItems = ({ list, isLoading }) => {
             </div>
           </div>
 
-          <Slider {...settings}>
+          <Carousel>
             {list.map((item, index) => (
               <div className="carousel__item" key={`${item.id}-${index}`}>
                 <div className="nft__item">
@@ -145,7 +113,7 @@ const NewItems = ({ list, isLoading }) => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </Carousel>
         </div>
       </div>
     </section>
