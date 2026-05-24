@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
 import { getHotCollectionsApi } from "../api/collection";
+import { useQuery } from "./query";
+
+const placeholderItems = Array.from({ length: 6 }).map((item) => ({
+  id: 0,
+  title: "",
+  authorImage: "",
+  nftImage: "",
+  nftId: 0,
+  authorId: 0,
+  code: 0,
+}));
 
 function useHotCollections() {
-  const [collections, setCollections] = useState(
-    Array.from({ length: 6 }).map((item, index) => ({
-      id: 0,
-      title: "",
-      authorImage: "",
-      nftImage: "",
-      nftId: 0,
-      authorId: 0,
-      code: 0,
-    })),
-  );
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    async function getHotCollections() {
-      setIsLoading(true);
-      const hotCollections = await getHotCollectionsApi();
-      setCollections(hotCollections);
-      setIsLoading(false);
-    }
-
-    getHotCollections();
-  }, []);
-
-  return { hotCollections: collections, isLoading };
+  const { isLoading, data } = useQuery(() => getHotCollectionsApi());
+  return { hotCollections: data || placeholderItems, isLoading };
 }
 
 export { useHotCollections };
