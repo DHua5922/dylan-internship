@@ -8,7 +8,7 @@ import TopSellers from "../components/home/TopSellers";
 import { useHotCollections } from "../hooks/collection";
 
 const Home = () => {
-  const hotCollections = useHotCollections(); 
+  const { hotCollections, isLoading } = useHotCollections(); 
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,7 +20,7 @@ const Home = () => {
         <div id="top"></div>
         <Landing />
         <LandingIntro />
-        <HotCollections list={hotCollections} />
+        <HotCollections list={hotCollections} isLoading={isLoading} />
         <NewItems />
         <TopSellers />
         <BrowseByCategory />
