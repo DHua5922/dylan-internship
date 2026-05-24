@@ -1,10 +1,10 @@
 import { axios } from ".";
 
-async function getNewItemsApi() {
+async function getTopSellersApi() {
   try {
     const response = await axios({
       method: "get",
-      url: "/newItems",
+      url: "/topSellers",
     });
     return response.data;
   } catch (err) {
@@ -12,4 +12,4 @@ async function getNewItemsApi() {
   }
 }
 
-export { getNewItemsApi };
+export { getTopSellersApi };

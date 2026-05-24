@@ -1,10 +1,10 @@
-import axios from "axios";
+import { axios } from ".";
 
 async function getHotCollectionsApi() {
   try {
     const response = await axios({
       method: "get",
-      url: "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections",
+      url: "/hotCollections",
     });
     return response.data;
   } catch (err) {
