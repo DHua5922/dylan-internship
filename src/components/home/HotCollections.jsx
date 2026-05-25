@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
 import Carousel from "../UI/Carousel";
+import { ANIMATION_FADE_IN } from "../../constants";
 
 const HotCollections = ({ list, isLoading }) => {
   return (
-    <section id="section-collections" className="no-bottom">
+    <section
+      id="section-collections"
+      className="no-bottom"
+      data-aos={ANIMATION_FADE_IN}
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

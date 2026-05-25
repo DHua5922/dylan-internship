@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
+import { ANIMATION_FADE_IN } from "../../constants";
 
 const TopSellers = ({ list, isLoading }) => {
   return (
-    <section id="section-popular" className="pb-5">
+    <section id="section-popular" className="pb-5" data-aos={ANIMATION_FADE_IN}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
