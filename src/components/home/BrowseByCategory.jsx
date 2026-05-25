@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ANIMATION_FADE_LEFT } from "../../constants";
 
 const BrowseByCategory = () => {
   return (
-    <section id="section-category" className="no-top">
+    <section
+      id="section-category"
+      className="no-top"
+      data-aos={ANIMATION_FADE_LEFT}
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
