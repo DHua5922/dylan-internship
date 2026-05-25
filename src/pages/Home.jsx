@@ -6,7 +6,7 @@ import LandingIntro from "../components/home/LandingIntro";
 import NewItems from "../components/home/NewItems";
 import TopSellers from "../components/home/TopSellers";
 import { useHotCollections } from "../hooks/collection";
-import { useNewItems } from "../hooks/new-item";
+import { useNewItems } from "../hooks/item";
 import { useTopSellers } from "../hooks/seller";
 
 const Home = () => {

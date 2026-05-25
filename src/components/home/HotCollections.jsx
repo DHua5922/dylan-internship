@@ -57,7 +57,7 @@ const HotCollections = ({ list, isLoading }) => {
                       </>
                     ) : (
                       <>
-                        <Link to="/explore">
+                        <Link to={`/item-details/${item.nftId}`}>
                           <h4>{item.title}</h4>
                         </Link>
                         <span>ERC-{item.code}</span>
