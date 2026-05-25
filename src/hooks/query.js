@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useQuery(queryFn) {
+function useQuery(queryFn, deps = []) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
 
@@ -13,7 +13,7 @@ function useQuery(queryFn) {
     };
 
     fetchData();
-  }, []);
+  }, deps);
 
   return { isLoading, data };
 }

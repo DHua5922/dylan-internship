@@ -1,7 +1,7 @@
 import { getHotCollectionsApi } from "../api/collection";
 import { useQuery } from "./query";
 
-const placeholderItems = Array.from({ length: 6 }).map((_, index) => ({
+const placeholderData = Array.from({ length: 6 }).map((_, index) => ({
   id: index,
   title: "",
   authorImage: "",
@@ -13,7 +13,7 @@ const placeholderItems = Array.from({ length: 6 }).map((_, index) => ({
 
 function useHotCollections() {
   const { isLoading, data } = useQuery(() => getHotCollectionsApi());
-  return { hotCollections: data || placeholderItems, isLoading };
+  return { hotCollections: data || placeholderData, isLoading };
 }
 
 export { useHotCollections };
