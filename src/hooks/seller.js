@@ -11,7 +11,7 @@ const placeholderData = Array.from({ length: 8 }).map((_, index) => ({
 
 function useTopSellers() {
   const { isLoading, data } = useQuery(() => getTopSellersApi());
-  return { topSellers: isLoading ? placeholderData : data || [], isLoading };
+  return { topSellers: data || placeholderData, isLoading };
 }
 
 export { useTopSellers };
