@@ -50,7 +50,7 @@ const Item = ({ item, isLoading, className, ...props }) => {
         {isLoading ? (
           <Skeleton width="100%" height="225px" borderRadius="10px" />
         ) : (
-          <Link to={`/item/${item.nftId}`}>
+          <Link to={`/item-details/${item.nftId}`}>
             <img
               src={item.nftImage}
               className="lazy nft__item_preview"
@@ -63,7 +63,7 @@ const Item = ({ item, isLoading, className, ...props }) => {
         {isLoading ? (
           <Skeleton width="100px" height="30px" borderRadius="10px" />
         ) : (
-          <Link to={`/item/${item.nftId}`}>
+          <Link to={`/item-details/${item.nftId}`}>
             <h4>{item.title}</h4>
           </Link>
         )}
