@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Item from "../UI/Item";
 
 const ExploreItems = ({ list, isLoading, filter, onChangeFilter }) => {
-  const [showEndIndex, setShowEndIndex] = React.useState(8);
+  const [showEndIndex, setShowEndIndex] = useState(8);
   return (
     <>
       <div>
