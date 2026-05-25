@@ -13,6 +13,7 @@ function useQuery(queryFn, deps = []) {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   return { isLoading, data };
